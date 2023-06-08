@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solicitar Aula Grátis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      padding: 20px 0;
+    }
+
+    .section-heading {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: justify;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    li {
+      margin: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+
+    .calculator {
+      margin: 50px auto;
+      max-width: 600px;
+    }
+
+    .calculator label {
+      display: inline-block;
+      width: 150px;
+      text-align: right;
+      margin-right: 20px;
+    }
+
+    .calculator input {
+      padding: 8px;
+      width: 200px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .calculator button {
+      padding: 12px 24px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .calculator button:hover {
+      background-color: #45a049;
+    }
+
+    .calculator #result {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Solicitar Aula Grátis</h1>
+  <div class="section-heading">Escolha a matéria para solicitar sua aula grátis:</div>
+  <ul>
+    <li><a class="button" href="https://api.whatsapp.com/send?phone=SEU_NÚMERO&text=Olá! Gostaria de marcar uma aula grátis de química.">Química</a></li>
+    <li><a class="button" href="https://api.whatsapp.com/send?phone=SEU_NÚMERO&text=Olá! Gostaria de marcar uma aula grátis de física.">Física</a></li>
+    <li><a class="button" href="https://api.whatsapp.com/send?phone=SEU_NÚMERO&text=Olá! Gostaria de marcar uma aula grátis de matemática.">Matemática</a></li>
+    <li><a class="button" href="https://api.whatsapp.com/send?phone=SEU_NÚMERO&text=Olá! Gostaria de marcar uma aula grátis de biologia.">Biologia</a></li>
+  </ul>
+  <p>Aproveite a oportunidade de aprender e se preparar para o sucesso! Nossas aulas gratuitas são ideais para auxiliar no seu progresso nos estudos. Oferecemos suporte para o ENEM, concursos, vestibulares, ensino médio e fundamental. A primeira aula é por nossa conta, sem compromisso. Você só solicita a próxima aula se sentir que vale a pena. Faça sua escolha e comece a trilhar o caminho para o conhecimento agora mesmo!</p>
+
+  <div class="calculator">
+    <h2>Calculadora de Preços</h2>
+    <label for="hours">Horas de Aula:</label>
+    <input type="number" id="hours" min="1" step="1" value="1">
+    <br>
+    <button onclick="calculatePrice()">Calcular</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function calculatePrice() {
+      var hours = parseInt(document.getElementById('hours').value);
+      var basePrice = 30;
+      var discountPercent = (hours - 1) * 10;
+      var totalPrice = basePrice * hours * ((100 - discountPercent) / 100);
+
+      document.getElementById('result').innerHTML = "Preço Total: R$" + totalPrice.toFixed(2);
+    }
+  </script>
+</body>
+</html>
